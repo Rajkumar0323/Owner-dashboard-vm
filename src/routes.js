@@ -9,7 +9,7 @@ const Owner = React.lazy(() => import('./views/owner/Owner'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
-const routes = [
+const routes = [  
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/theme', name: '', element: QRCodes, exact: true },  
