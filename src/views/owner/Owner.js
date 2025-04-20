@@ -6,10 +6,7 @@ const Owner = () => {
   return (
     <>
       <CCard className="mb-4">
-        <CCardHeader>
-          Owner Details
-          {/* <DocsLink href="https://coreui.io/docs/utilities/colors/" /> */}
-        </CCardHeader>
+        <CCardHeader>Owner Details</CCardHeader>
         <CCardBody>
           <CRow>
             <CCol>
@@ -20,7 +17,7 @@ const Owner = () => {
               <strong>Mobile:</strong> {user?.mobile}
             </CCol>
           </CRow>
-       
+
           <CRow>
             <CCol>
               <strong>Email:</strong> {user?.email}

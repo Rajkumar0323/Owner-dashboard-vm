@@ -164,15 +164,12 @@ const VisitorsList = () => {
   useEffect(() => {
     // console.log(visitors)
   }, [visitors])
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null)
 
   return (
     <>
       <CCard className="mb-4">
-        <CCardHeader>
-          Visitors
-          {/* <DocsLink href="https://coreui.io/docs/content/typography/" /> */}
-        </CCardHeader>
+        <CCardHeader>Visitors</CCardHeader>
         <CCardBody>
           <CTable align="middle" className="mb-0 border" hover responsive>
             <CTableHead className="text-nowrap">
@@ -180,14 +177,12 @@ const VisitorsList = () => {
                 <CTableHeaderCell className="bg-body-tertiary text-center">
                   <CIcon icon={cilPeople} />
                 </CTableHeaderCell>
-                {/* <CTableHeaderCell className="bg-body-tertiary">User</CTableHeaderCell> */}
+
                 <CTableHeaderCell className="bg-body-tertiary">Reason</CTableHeaderCell>
                 <CTableHeaderCell className="bg-body-tertiary text-center">
                   Country
                 </CTableHeaderCell>
-                {/* <CTableHeaderCell className="bg-body-tertiary text-center">
-                      Payment Method
-                    </CTableHeaderCell> */}
+
                 <CTableHeaderCell className="bg-body-tertiary">Activity</CTableHeaderCell>
               </CTableRow>
             </CTableHead>
@@ -226,7 +221,11 @@ const VisitorsList = () => {
                     <CTableRow v-for="item in tableItems" key={index}>
                       <CTableDataCell className="text-center">
                         {/* <CAvatar size="lg" src={item?.image}  style={{height:"3rem"}}/> */}
-                        <img src={item?.image} style={{ height: '10%', width: '3rem',cursor:"pointer" }} onClick={() => setSelectedImage(item?.image)} />
+                        <img
+                          src={item?.image}
+                          style={{ height: '10%', width: '3rem', cursor: 'pointer' }}
+                          onClick={() => setSelectedImage(item?.image)}
+                        />
                       </CTableDataCell>
                       <CTableDataCell>
                         <div

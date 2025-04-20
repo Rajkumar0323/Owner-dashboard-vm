@@ -16,6 +16,7 @@ import CIcon from '@coreui/icons-react'
 import useSound from 'use-sound'
 import mySound from './../../assets/beep-04.mp3'
 import avatar8 from './../../assets/images/avatars/8.jpg'
+import avatar2 from './../../assets/images/avatars/2.jpg'
 import { io } from 'socket.io-client'
 const AppHeaderDropdown = () => {
   const socket = useMemo(() => io('https://chat-backend-jqfr.onrender.com'), [])
@@ -28,7 +29,7 @@ const AppHeaderDropdown = () => {
   const handleColClick = (des) => {
     navigate(des)
   }
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null)
   useEffect(() => {
     let interval
     if (isPlaying) {
@@ -64,22 +65,19 @@ const AppHeaderDropdown = () => {
   return (
     <>
       <CDropdown variant="nav-item">
-      <Modal show={!!selectedImage} onHide={() => setSelectedImage(null)} centered>
-                <Modal.Body className="text-center">
-                  <img src={selectedImage} alt="Large Preview" className="img-fluid rounded" />
-                </Modal.Body>
-              </Modal>
+        <Modal show={!!selectedImage} onHide={() => setSelectedImage(null)} centered>
+          <Modal.Body className="text-center">
+            <img src={selectedImage} alt="Large Preview" className="img-fluid rounded" />
+          </Modal.Body>
+        </Modal>
         <CDropdownToggle placement="bottom-end" className="py-0 pe-0" caret={false}>
-          <CAvatar src={avatar8} size="md" />
+          <CAvatar src={avatar2} size="md" />
         </CDropdownToggle>
         <CDropdownMenu className="pt-0" placement="bottom-end">
           <CDropdownHeader className="bg-body-secondary fw-semibold mb-2">Account</CDropdownHeader>
           <CDropdownItem onClick={() => handleColClick('/visitors')} style={{ cursor: 'pointer' }}>
             <CIcon icon={cilPeople} className="me-2" />
             Visitors
-            <CBadge color="info" className="ms-2">
-              42
-            </CBadge>
           </CDropdownItem>
 
           <CDropdownHeader className="bg-body-secondary fw-semibold my-2">Settings</CDropdownHeader>
@@ -96,10 +94,13 @@ const AppHeaderDropdown = () => {
       </CDropdown>
       {notifications && (
         <div className="notification-popup">
-
           <div className="notification-box border border-1 rounded-3 bg-light p-3 shadow">
             <p className="mb-2 fw-bold">🚪 Someone is at the door!</p>
-            <img src={notifications?.capturedImage} style={{ width: '100px', height: '100px',cursor:"pointer"  }} onClick={() => setSelectedImage(notifications?.capturedImage)}/>
+            <img
+              src={notifications?.capturedImage}
+              style={{ width: '100px', height: '100px', cursor: 'pointer' }}
+              onClick={() => setSelectedImage(notifications?.capturedImage)}
+            />
             <p
               style={{
                 maxWidth: '250px',
