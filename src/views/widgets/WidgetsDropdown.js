@@ -85,7 +85,9 @@ const WidgetsDropdown = (props) => {
   return (
     <CRow className={props.className} xs={{ gutter: 4 }}>
       <CCol
-        sm={6}
+        sm={4}
+        xs={4}
+        md={4}
         xl={4}
         xxl={3}
         onClick={() => handleColClick('/owner')}
@@ -303,7 +305,9 @@ const WidgetsDropdown = (props) => {
         />
       </CCol> */}
       <CCol
-        sm={6}
+        sm={4}
+        xs={4}
+        md={4}
         xl={4}
         xxl={3}
         onClick={() => handleColClick('/visitors')}
