@@ -30,14 +30,14 @@ const Register = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
   const handleSignup = async () => {
-    const { name, email, mobile, address, password } = formData;
-    if(!name || !email || !mobile || !address || !password){
+    const { name, email, mobile, address, password } = formData
+    if (!name || !email || !mobile || !address || !password) {
       alert('All the fields are required!!!')
       return
     }
     try {
-      const res = await axios.post('https://chat-backend-jqfr.onrender.com/signup', formData)      
-      if (res.status===201) {
+      const res = await axios.post('https://chat-backend-jqfr.onrender.com/api/signup', formData)
+      if (res.status === 201) {
         alert('Signup successful! Please log in.')
         navigate('/login')
       }
@@ -118,7 +118,7 @@ const Register = () => {
                       onChange={handleChange}
                     />
                   </CInputGroup>
-              
+
                   <div className="d-grid">
                     <CButton color="success" onClick={handleSignup}>
                       Create Account

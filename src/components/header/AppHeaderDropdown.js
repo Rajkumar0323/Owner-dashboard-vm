@@ -20,6 +20,7 @@ import avatar2 from './../../assets/images/avatars/2.jpg'
 import { io } from 'socket.io-client'
 const AppHeaderDropdown = () => {
   const socket = useMemo(() => io('https://chat-backend-jqfr.onrender.com'), [])
+  // const socket = useMemo(() => io('http://localhost:5000'), [])
   const [socketID, setSocketID] = useState('')
   const [notifications, setNotifications] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)

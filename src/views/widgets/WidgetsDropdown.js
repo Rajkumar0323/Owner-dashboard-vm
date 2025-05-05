@@ -31,7 +31,7 @@ const WidgetsDropdown = (props) => {
   useEffect(() => {
     if (user) {
       axios
-        .get(`https://chat-backend-jqfr.onrender.com/visitors/${user.id}`)
+        .get(`https://chat-backend-jqfr.onrender.com/api/visitors/${user.id}`)
         .then((res) => setVisitors(res.data))
         .catch((err) => console.error('Error fetching visitors:', err))
     }
@@ -97,7 +97,7 @@ const WidgetsDropdown = (props) => {
           color="primary"
           value={
             <>
-              {user ? user.id : '0'} <span className="fs-6 fw-normal"></span>
+              {user ? user.id : 0} <span className="fs-6 fw-normal"></span>
             </>
           }
           title="Owner Info"
@@ -114,7 +114,7 @@ const WidgetsDropdown = (props) => {
                     backgroundColor: 'transparent',
                     borderColor: 'rgba(255,255,255,.55)',
                     pointBackgroundColor: getStyle('--cui-info'),
-                    data: dynamicChartData.data,
+                    data: dynamicChartData?.data,
                   },
                 ],
               }}

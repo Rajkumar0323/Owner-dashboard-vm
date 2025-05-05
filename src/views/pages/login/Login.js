@@ -27,14 +27,14 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('https://chat-backend-jqfr.onrender.com/login', {
+      const res = await axios.post('https://chat-backend-jqfr.onrender.com/api/login', {
         email: formData.email,
         password: formData.password,
       })
       if (res.status) {
         localStorage.setItem('user', JSON.stringify(res.data.owner))
         setFormData({ email: '', password: '' })
-        navigate("/dashboard")
+        navigate('/dashboard')
       }
     } catch (err) {
       alert('Login failed!')
@@ -90,7 +90,7 @@ const Login = () => {
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className=" text-white bg-primary py-5" >
+              <CCard className=" text-white bg-primary py-5">
                 <CCardBody className="text-center">
                   <div>
                     <h2>Sign up</h2>
