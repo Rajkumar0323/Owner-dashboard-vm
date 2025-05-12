@@ -36,7 +36,7 @@ const Register = () => {
       return
     }
     try {
-      const res = await axios.post('https://chat-backend-jqfr.onrender.com/api/signup', formData)
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/signup`, formData)
       if (res.status === 201) {
         alert('Signup successful! Please log in.')
         navigate('/login')

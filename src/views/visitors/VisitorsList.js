@@ -156,7 +156,7 @@ const VisitorsList = () => {
   useEffect(() => {
     if (user) {
       axios
-        .get(`https://chat-backend-jqfr.onrender.com/api/visitors/${user.id}`)
+        .get(`${import.meta.env.VITE_API_URL}/api/visitors/${user.id}`)
         .then((res) => setVisitors(res.data))
         .catch((err) => console.error('Error fetching visitors:', err))
     }

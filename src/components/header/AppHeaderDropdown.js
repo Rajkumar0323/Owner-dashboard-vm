@@ -19,8 +19,10 @@ import avatar8 from './../../assets/images/avatars/8.jpg'
 import avatar2 from './../../assets/images/avatars/2.jpg'
 import { io } from 'socket.io-client'
 const AppHeaderDropdown = () => {
-  const socket = useMemo(() => io('https://chat-backend-jqfr.onrender.com'), [])
-  // const socket = useMemo(() => io('http://localhost:5000'), [])
+  // const socket = useMemo(() => io('https://chat-backend-jqfr.onrender.com'), [])
+  console.log('API URL', import.meta.env.VITE_API_URL)
+
+  const socket = useMemo(() => io(import.meta.env.VITE_API_URL), [])
   const [socketID, setSocketID] = useState('')
   const [notifications, setNotifications] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)

@@ -27,7 +27,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('https://chat-backend-jqfr.onrender.com/api/login', {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/login`, {
         email: formData.email,
         password: formData.password,
       })
